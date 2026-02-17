@@ -1,6 +1,6 @@
 # 🍔 Burguer House Website
 
-![Burguer House](https://i.postimg.cc/vT2zMWnn/Chat-GPT-Image-17-de-fev-de-2026-16-19-20.png)
+![Burguer House](https://i.postimg.cc/4HttQHw0)
 
 ## 📌 Sobre o Projeto
 
