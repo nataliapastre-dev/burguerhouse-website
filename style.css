@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+/* =========================
+   VARIÁVEIS
+========================= */
+:root {
+    --primary: #ffcc00;
+    --secondary: #ff3c00;
+    --dark: #0f0f0f;
+    --dark-light: #1c1c1c;
+    --text: #ffffff;
+    --muted: #bbbbbb;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 11px 8%;   /* antes era 20px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(255, 204, 0, 0.1);
+    color: var(--primary);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    margin-top: 100px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('imagens/double-smash.jpg') center/cover no-repeat;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+    line-height: 1.9;
+    font-weight: 600;
+}
+
+.hero .btn {
+    padding: 15px 50px;
+    border-radius: 40px;
+    background: linear-gradient(45deg, var(--secondary), #ff6600);
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+section {
+    padding: 100px 8%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 60px;
+}
+
+h3 {
+    text-align: center;
+    margin: 50px 0 30px;
+    color: var(--secondary);
+    font-size: 1.8rem;
+}
+
+/* =========================
+   CARDS GERAIS
+========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.card {
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card h4 {
+    font-size: 1.55rem;          /* MAIOR */
+    margin-bottom: 15px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 1.18rem;          /* DESCRIÇÃO MAIOR */
+    color: var(--muted);
+    margin-bottom: 18px;
+    line-height: 1.75;           /* MELHOR LEITURA */
+}
+
+
+.preco {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* =========================
+   CARDS CERVEJAS (CORRIGIDO)
+========================= */
+
+.card img.bebida {
+    width: 100%;
+    height: 280px;          /* MAIS ALTO */
+    object-fit: contain;    /* NÃO CORTA */
+    background: #111;       /* FUNDO ESCURO */
+    padding: 25px;          /* ESPAÇO INTERNO */
+    border-radius: 15px;
+}
+
+/* Opcional: deixar card bebida levemente diferente */
+.card.bebida-card {
+    background: linear-gradient(145deg, #141414, #1c1c1c);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   SOBRE NÓS
+========================= */
+.sobre {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.sobre p {
+    font-size: 1.45rem;      /* BEM MAIOR */
+    line-height: 1.9;        /* Melhor leitura */
+    color: var(--text);      /* Branco para mais destaque */
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+
+/* =========================
+   ESPAÇO KIDS
+========================= */
+.espaco-kids {
+    text-align: center;
+}
+
+.espaco-kids img {
+    display: block;
+    margin: 0 auto 25px auto;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.espaco-kids p {
+    font-size: 1.6rem;
+    max-width: 950px;
+    margin: auto;
+    line-height: 2;
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* =========================
+   CONTATO
+========================= */
+.contato {
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    text-align: center;
+}
+
+.contato-box {
+    background: #1c1c1c;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.contato-box p {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: var(--text);    /* Branco ao invés de cinza */
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: black;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.95rem;
+    color: #777;
+
+    footer p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+}
+
+/* =========================
+   RESPONSIVO - CELULAR
+========================= */
+@media (max-width: 480px) {
+
+    html {
+        scroll-padding-top: 140px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 5%;
+        gap: 12px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    .hero {
+        margin-top: 140px;
+        height: auto;
+        padding: 120px 5%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+}
